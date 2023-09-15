@@ -705,7 +705,7 @@ void pushup(int x,int op){
 ```
 
 
-其中 $diam$ 是当前点的答案（这个点代表的簇的直径）。$len$ 表示当前 Compress Node 所在簇路径的长度，$ maxs_{0/1} $ 表示 compress node 到簇内点和端点的不选簇路径儿子/不选父亲的最大距离（如果是 Rake Node 则只存储选取当前簇的上端点到簇内点和端点的最大距离  $maxs_0$）。每次查询 SATT 根节点的 diam 即可，正确性显然。
+其中 $diam$ 是当前点的答案（这个点代表的簇的直径）。$len$ 表示当前 Compress Node 所在簇路径的长度，$maxs_{0/1}$ 表示 compress node 到簇内点和端点的不选簇路径儿子/不选父亲的最大距离（如果是 Rake Node 则只存储选取当前簇的上端点到簇内点和端点的最大距离  $maxs_0$）。每次查询 SATT 根节点的 diam 即可，正确性显然。
 
 注意对 `Pushrev(x)` 做一些改动。
 ```cpp
@@ -733,7 +733,7 @@ SATT 支持动态 $O(\log n)$ 维护树的重心，做到这需要**非局部搜
 
 我们的搜索从 SATT 的根节点，即根簇开始。注意到重心有很好的性质：假如有一条边的一侧点的个数大于等于另一侧点的个数，那么边的这一侧一定至少有一个重心（重心可能有 2 个）。
 
-记 $sum$ 表示某一个簇的点个数，$maxs$ 为一棵 Rake Tree 的所有 Rake Node 中儿子的 $sum$ 最大值。
+记 $sum$ 表示某一个簇的点个数， $maxs$  为一棵 Rake Tree 的所有 Rake Node 中儿子的 $sum$ 最大值。
 
 ```cpp
 void pushup(int x,int op){
